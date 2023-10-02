@@ -40,7 +40,7 @@ import SwiftUI
 
 
 
-@Observable class SpaceshipList {
+@Observable class SpaceshipListModel {
     
     var spaceships : [SpaceshipModel]
     
