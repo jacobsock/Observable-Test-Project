@@ -14,6 +14,7 @@
 		B9B79CC42AC71B4900A3C707 /* Observable_Test_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B79CC32AC71B4900A3C707 /* Observable_Test_ProjectTests.swift */; };
 		B9B79CCE2AC71B4900A3C707 /* Observable_Test_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B79CCD2AC71B4900A3C707 /* Observable_Test_ProjectUITests.swift */; };
 		B9B79CD02AC71B4900A3C707 /* Observable_Test_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B79CCF2AC71B4900A3C707 /* Observable_Test_ProjectUITestsLaunchTests.swift */; };
+		B9B79CDF2AC7212000A3C707 /* SpaceshipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B79CDE2AC7212000A3C707 /* SpaceshipModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		B9B79CC92AC71B4900A3C707 /* Observable-Test-ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Observable-Test-ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B79CCD2AC71B4900A3C707 /* Observable_Test_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable_Test_ProjectUITests.swift; sourceTree = "<group>"; };
 		B9B79CCF2AC71B4900A3C707 /* Observable_Test_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable_Test_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B9B79CDE2AC7212000A3C707 /* SpaceshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				B9B79CB42AC71B4700A3C707 /* ContentView.swift */,
 				B9B79CB62AC71B4900A3C707 /* Assets.xcassets */,
 				B9B79CB82AC71B4900A3C707 /* Preview Content */,
+				B9B79CDE2AC7212000A3C707 /* SpaceshipModel.swift */,
 			);
 			path = "Observable-Test-Project";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9B79CDF2AC7212000A3C707 /* SpaceshipModel.swift in Sources */,
 				B9B79CB52AC71B4700A3C707 /* ContentView.swift in Sources */,
 				B9B79CB32AC71B4700A3C707 /* Observable_Test_ProjectApp.swift in Sources */,
 			);
