@@ -9,7 +9,13 @@ import SwiftUI
 
 struct SpaceshipCategoryView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ForEach(SpaceshipType.allCases, id: \.rawValue) { spaceshipType in
+            
+            NavigationLink(destination: SpaceshipListView(spaceshipType: spaceshipType)){
+                Text(spaceshipType.rawValue)
+            }
+             }
     }
 }
 

@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct SpaceshipDetailView: View {
+    
+    var spaceship : SpaceshipModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("\(spaceship.spaceshipName) : Detail View")
     }
 }
 
 #Preview {
-    SpaceshipDetailView()
+    SpaceshipDetailView(spaceship: SpaceshipModel(timeTraveled: 5, totalTimeOfJourney: 10, timeReamaining: 0, spaceshipName: "Jacob's Ship", isSelected: true, spaceshipType: .racing))
 }

@@ -8,6 +8,11 @@
 import Foundation
 import SwiftUI
 
+enum SpaceshipType:  String,CaseIterable {
+
+    case cargo, war, racing
+}
+
 
 @Observable class SpaceshipModel : Identifiable {
     var id = UUID()
@@ -15,6 +20,7 @@ import SwiftUI
     var totalTimeOfJourney : Int
     var spaceshipName : String
     var isSelected : Bool
+    var spaceshipType : SpaceshipType
     
     var timeRemaining : Int{
         return totalTimeOfJourney - timeTraveled
@@ -26,7 +32,7 @@ import SwiftUI
     }
     
     
-    init(timeTraveled: Int, totalTimeOfJourney: Int, timeReamaining: Int, spaceshipName: String, isSelected: Bool) {
+    init(timeTraveled: Int, totalTimeOfJourney: Int, timeReamaining: Int, spaceshipName: String, isSelected: Bool, spaceshipType: SpaceshipType) {
         self.timeTraveled = timeTraveled
         
         self.totalTimeOfJourney = totalTimeOfJourney
@@ -34,6 +40,8 @@ import SwiftUI
         self.spaceshipName = spaceshipName
         
         self.isSelected = isSelected
+        
+        self.spaceshipType = spaceshipType
 
     }
 }

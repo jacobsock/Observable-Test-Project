@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct AddSpaceshipButtonView: View {
+    @Environment(SpaceshipListModel.self) private var spaceshipListModel
+    @Binding var spaceshipNameText : String
+    var spaceshipType : SpaceshipType
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            TextField("Enter Spaceship Name", text: $spaceshipNameText)
+            
+            Button(action: {
+                print("pressed")
+                
+                if let currentlySelectedSpaceship = spaceshipListModel.spaceships.first(where: { $0.isSelected }) {
+                    currentlySelectedSpaceship.isSelected = false
+                }
+                let spaceship = SpaceshipModel(timeTraveled: Int.random(in: 1..<10), totalTimeOfJourney: Int.random(in: 50..<100), timeReamaining: 0, spaceshipName: spaceshipNameText, isSelected: true, spaceshipType: spaceshipType)
+                spaceshipListModel.spaceships.append(spaceship)
+                spaceshipNameText = ""
+                
+            }, label: {
+                Text("Submit")
+            })
+        }
     }
 }
 
 #Preview {
-    AddSpaceshipButtonView()
+    AddSpaceshipButtonView(spaceshipNameText: .constant(""), spaceshipType: .racing)
 }

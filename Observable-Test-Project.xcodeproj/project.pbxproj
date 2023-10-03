@@ -16,6 +16,9 @@
 		B9B79CD02AC71B4900A3C707 /* Observable_Test_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B79CCF2AC71B4900A3C707 /* Observable_Test_ProjectUITestsLaunchTests.swift */; };
 		B9B79CDF2AC7212000A3C707 /* SpaceshipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B79CDE2AC7212000A3C707 /* SpaceshipModel.swift */; };
 		B9B79CE12ACB1ACF00A3C707 /* SpaceshipListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B79CE02ACB1ACF00A3C707 /* SpaceshipListView.swift */; };
+		B9B79CE32ACB9C7900A3C707 /* SpaceshipDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B79CE22ACB9C7900A3C707 /* SpaceshipDetailView.swift */; };
+		B9B79CE52ACBB43300A3C707 /* SpaceshipCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B79CE42ACBB43300A3C707 /* SpaceshipCategoryView.swift */; };
+		B9B79CE72ACBB84F00A3C707 /* AddSpaceshipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B79CE62ACBB84F00A3C707 /* AddSpaceshipButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		B9B79CCF2AC71B4900A3C707 /* Observable_Test_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable_Test_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B9B79CDE2AC7212000A3C707 /* SpaceshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipModel.swift; sourceTree = "<group>"; };
 		B9B79CE02ACB1ACF00A3C707 /* SpaceshipListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipListView.swift; sourceTree = "<group>"; };
+		B9B79CE22ACB9C7900A3C707 /* SpaceshipDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipDetailView.swift; sourceTree = "<group>"; };
+		B9B79CE42ACBB43300A3C707 /* SpaceshipCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipCategoryView.swift; sourceTree = "<group>"; };
+		B9B79CE62ACBB84F00A3C707 /* AddSpaceshipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpaceshipButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,10 @@
 			children = (
 				B9B79CB22AC71B4700A3C707 /* Observable_Test_ProjectApp.swift */,
 				B9B79CB42AC71B4700A3C707 /* ContentView.swift */,
+				B9B79CE42ACBB43300A3C707 /* SpaceshipCategoryView.swift */,
 				B9B79CE02ACB1ACF00A3C707 /* SpaceshipListView.swift */,
+				B9B79CE62ACBB84F00A3C707 /* AddSpaceshipButtonView.swift */,
+				B9B79CE22ACB9C7900A3C707 /* SpaceshipDetailView.swift */,
 				B9B79CB62AC71B4900A3C707 /* Assets.xcassets */,
 				B9B79CB82AC71B4900A3C707 /* Preview Content */,
 				B9B79CDE2AC7212000A3C707 /* SpaceshipModel.swift */,
@@ -263,8 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9B79CE32ACB9C7900A3C707 /* SpaceshipDetailView.swift in Sources */,
+				B9B79CE72ACBB84F00A3C707 /* AddSpaceshipButtonView.swift in Sources */,
 				B9B79CDF2AC7212000A3C707 /* SpaceshipModel.swift in Sources */,
 				B9B79CE12ACB1ACF00A3C707 /* SpaceshipListView.swift in Sources */,
+				B9B79CE52ACBB43300A3C707 /* SpaceshipCategoryView.swift in Sources */,
 				B9B79CB52AC71B4700A3C707 /* ContentView.swift in Sources */,
 				B9B79CB32AC71B4700A3C707 /* Observable_Test_ProjectApp.swift in Sources */,
 			);
