@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @Environment(SpaceshipListModel.self) private var spaceshipListModel
+    @Environment(RockListModel.self) private var rockListModel
     var body: some View {
 
         NavigationStack{
-            Text("Spaceship types:")
-            SpaceshipCategoryView()
+            Text("Rock types:")
+            RockCategoryView()
                 .padding()
             
         }
@@ -25,5 +25,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(SpaceshipListModel(spaceships: [SpaceshipModel(timeTraveled: 5, totalTimeOfJourney: 10, timeReamaining: 0, spaceshipName: "Jacob's Ship", isSelected: true, spaceshipType: .racing)]))
+        .environment(RockListModel(rocks: [RockModel(rockName: "Granite", isSelected: true, rockType: .igneous)]))
 }
