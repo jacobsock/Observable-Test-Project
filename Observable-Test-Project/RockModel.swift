@@ -9,18 +9,28 @@ import Foundation
 import SwiftUI
 
 
-enum RockType:  String,CaseIterable {
+enum RockType:  String, CaseIterable, Hashable {
 
     case sedimentary, igneous, metamorphic
 }
 
-
-@Observable class RockModel : Identifiable {
+@Observable class RockModel : Hashable, Identifiable {
+    
     var id = UUID()
     var rockName : String
     var isSelected : Bool
     var rockType : RockType
 
+    static func == (lhs: RockModel, rhs: RockModel) -> Bool {
+            return lhs.id == rhs.id && lhs.rockName == rhs.rockName && lhs.isSelected == rhs.isSelected && lhs.rockType == rhs.rockType
+        }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(rockName)
+        hasher.combine(isSelected)
+        hasher.combine(rockType)
+    }
     
     init(id: UUID = UUID(), rockName: String, isSelected: Bool, rockType: RockType) {
         self.id = id
@@ -29,7 +39,6 @@ enum RockType:  String,CaseIterable {
         self.rockType = rockType
     }
 }
-
 
 @Observable class RockListModel {
     var rocks : [RockModel]

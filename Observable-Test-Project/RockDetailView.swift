@@ -11,7 +11,8 @@ struct RockDetailView: View {
     
     var rock : RockModel
     var body: some View {
-        Text("\(rock.rockName) : Detail View")
+        Text("\(rock.rockName)")
+        Text("\(rock.rockType.rawValue)")
     }
 }
 

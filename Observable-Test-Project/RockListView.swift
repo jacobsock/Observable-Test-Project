@@ -19,10 +19,12 @@ struct RockListView: View {
             
             if(rock.rockType.rawValue == rockType.rawValue){
                 VStack{
-                    NavigationLink(rock.rockName){
-                        RockDetailView(rock: rock)
-                    }
+                    NavigationLink(rock.rockName, value: rock)
+                    
+                } .navigationDestination(for: RockModel.self) { rock in
+                    RockDetailView(rock: rock)
                 }
+
                     .onLongPressGesture{
                         if let idx = rockListModel.rocks.firstIndex(where: { $0.id == rock.id }) {
                             rockListModel.rocks.remove(at: idx)

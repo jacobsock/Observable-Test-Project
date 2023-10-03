@@ -18,7 +18,7 @@ struct ContentView: View {
             
             
                 .toolbar {
-                    NavigationLink(destination: AddRockButtonView()){
+                    NavigationLink(destination: AddRockButtonView()) {
                         Image(systemName: "plus")
                     }
                     
@@ -26,8 +26,6 @@ struct ContentView: View {
                 .padding()
             
         }
-        
-        
     }
 }
 
