@@ -31,11 +31,8 @@ enum RockType:  String,CaseIterable {
 }
 
 
-
 @Observable class RockListModel {
-    
     var rocks : [RockModel]
-    
     init(rocks: [RockModel]) {
         self.rocks = rocks
     }

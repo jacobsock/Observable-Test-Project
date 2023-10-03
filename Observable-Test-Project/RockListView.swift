@@ -13,36 +13,21 @@ struct RockListView: View {
     var rockType : RockType
     var body: some View {
         
-        AddRockButtonView(rockNameText: $rockNameText, rockType: rockType)
+        //  AddRockButtonView(rockNameText: $rockNameText, rockType: rockType)
         
-        List {
-            ForEach(rockListModel.rocks){ rock in
-                
-                if(rock.rockType.rawValue == rockType.rawValue){
-                    VStack{
-                        Text("\(rock.rockName)")
-                        
-                    }.background(rock.isSelected ? .cyan : .clear)
-                        .onTapGesture {
-                            if let currentlySelectedRock = rockListModel.rocks.first(where: { $0.isSelected }) {
-                                currentlySelectedRock.isSelected = false
-                            }
-                            rock.isSelected = true
-                        }
-                        .onLongPressGesture{
-                            if let idx = rockListModel.rocks.firstIndex(where: { $0.id == rock.id }) {
-                                rockListModel.rocks.remove(at: idx)
-                            }
-                        }
-                    
-                    NavigationLink(destination: RockDetailView(rock: rock)){
-                        Button {
-                            print("more details pressed")
-                        } label: {
-                            Text("More details")
-                        }
+        ForEach(rockListModel.rocks){ rock in
+            
+            if(rock.rockType.rawValue == rockType.rawValue){
+                VStack{
+                    NavigationLink(rock.rockName){
+                        RockDetailView(rock: rock)
                     }
                 }
+                    .onLongPressGesture{
+                        if let idx = rockListModel.rocks.firstIndex(where: { $0.id == rock.id }) {
+                            rockListModel.rocks.remove(at: idx)
+                        }
+                    }
             }
         }
     }

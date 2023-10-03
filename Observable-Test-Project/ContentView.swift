@@ -11,19 +11,33 @@ struct ContentView: View {
     
     @Environment(RockListModel.self) private var rockListModel
     var body: some View {
-
+        
         NavigationStack{
-            Text("Rock types:")
+            
             RockCategoryView()
+            
+            
+                .toolbar {
+                    NavigationLink(destination: AddRockButtonView()){
+                        Image(systemName: "plus")
+                    }
+                    
+                }
                 .padding()
             
         }
         
-    
+        
     }
 }
 
 #Preview {
-    ContentView()
-        .environment(RockListModel(rocks: [RockModel(rockName: "Granite", isSelected: true, rockType: .igneous)]))
+    ContentView().environment(RockListModel(
+        
+        rocks: [RockModel(rockName: "Granite", isSelected: true, rockType: .igneous),
+                
+                RockModel(rockName: "Limestone", isSelected: false, rockType: .sedimentary),
+                
+                RockModel(rockName: "Slate", isSelected: false, rockType: .metamorphic),
+               ]))
 }

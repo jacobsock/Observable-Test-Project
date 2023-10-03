@@ -8,12 +8,23 @@
 import SwiftUI
 
 struct AddRockButtonView: View {
+    
     @Environment(RockListModel.self) private var rockListModel
-    @Binding var rockNameText : String
-    var rockType : RockType
+    @State private var selectedRockType: RockType = .igneous
+    @State var rockNameText : String = ""
+   // var rockType : RockType
+
     var body: some View {
         VStack{
-            TextField("Enter Rock Name", text: $rockNameText)
+            
+            
+            TextField("Enter New Rock Name", text: $rockNameText)
+            Picker("Rock type", selection: $selectedRockType) {
+                ForEach(RockType.allCases, id: \.rawValue) { type in
+                    Text(String(describing: type))
+                }
+            }
+            .pickerStyle(.wheel)
             
             Button(action: {
                 print("pressed")
@@ -21,7 +32,7 @@ struct AddRockButtonView: View {
                 if let currentlySelectedRock = rockListModel.rocks.first(where: { $0.isSelected }) {
                     currentlySelectedRock.isSelected = false
                 }
-                let rock = RockModel(rockName: rockNameText, isSelected: true, rockType: rockType)
+                let rock = RockModel(rockName: rockNameText, isSelected: true, rockType: selectedRockType)
                 rockListModel.rocks.append(rock)
                 rockNameText = ""
                 
@@ -33,5 +44,5 @@ struct AddRockButtonView: View {
 }
 
 #Preview {
-    AddRockButtonView(rockNameText: .constant(""), rockType: .igneous)
+    AddRockButtonView().environment(RockListModel(rocks: [RockModel(rockName: "Granite", isSelected: true, rockType: .igneous)]))
 }
