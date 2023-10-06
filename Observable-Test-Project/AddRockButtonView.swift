@@ -12,19 +12,20 @@ struct AddRockButtonView: View {
     @Environment(RockListModel.self) private var rockListModel
     @State private var selectedRockType: RockType = .igneous
     @State var rockNameText : String = ""
-   // var rockType : RockType
-
+    
     var body: some View {
         VStack{
             
             
             TextField("Enter New Rock Name", text: $rockNameText)
-            Picker("Rock type", selection: $selectedRockType) {
+            
+            // Create a Picker to select the color
+            Picker("Rock Type ", selection: $selectedRockType) {
                 ForEach(RockType.allCases, id: \.rawValue) { type in
                     Text(String(describing: type))
+                        .tag(type)
                 }
-            }
-            .pickerStyle(.wheel)
+            }.pickerStyle(.wheel)
             
             Button(action: {
                 print("pressed")
@@ -33,6 +34,7 @@ struct AddRockButtonView: View {
                     currentlySelectedRock.isSelected = false
                 }
                 let rock = RockModel(rockName: rockNameText, isSelected: true, rockType: selectedRockType)
+                print("Selected rock type:\(rock.rockType.rawValue)")
                 rockListModel.rocks.append(rock)
                 rockNameText = ""
                 
